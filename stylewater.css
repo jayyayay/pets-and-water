@@ -1,0 +1,144 @@
+body{
+    height: 600px;
+    background : linear-gradient(0deg, #d7ffc6, #43aa8b);
+    background-size: 300% 220%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: transIn 0.2s;
+}
+#myH1{
+    font-size: 4rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: hsl(0, 0%, 25%);
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    border-radius: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 100;
+}
+#display{
+    font-size: 5rem;
+    font-family: monospace;
+    font-weight: bold;
+    color: hsl(0, 0%, 30%);
+    text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.75);
+    margin-bottom: 25px;
+}
+.case{
+    height: 440px;
+    width: 150px;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 10%;
+    background: url(waterr.png);
+    background-size: 400px 500px;
+    background-repeat: repeat-x;
+    animation: flow 4s linear infinite, transIn 0.8s;
+    box-shadow: 0px 0px 15px;
+    background-color: #6ee66846;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+}
+.case p{
+    margin: auto;
+    position: absolute;
+    font-family: "Poppins", sans-serif;
+    font-weight: 650;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 16px;
+    text-shadow: 0px 0px 10px;
+}
+.text {
+    font-family: "Parkinsans", sans-serif;
+    font-size: 14px;
+    font-weight: 480;
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 0px 35px;
+    animation: transIn 1s;
+}
+.days{
+    font-weight: 700;
+}
+.hours{
+    font-weight: 700;
+}
+@keyframes flow {
+    0% {
+        background-position-x: -1200px;
+        background-position-y: var(--height) ;
+    }
+    100% {
+        background-position-x: 0px;
+        background-position-y: var(--height) ; 
+    }
+}
+:root {
+    --height: ;
+}
+  nav{
+    position: absolute;
+    top: 30px;
+    width: 200px;
+    height: 40px;
+    background: #20524d;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px #ddff00d3;
+  }
+  nav a {
+    position: relative;
+    display: inline-block;
+    font-size: 21px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0 23px;
+    color: rgb(255, 255, 255);
+    text-shadow:#848484 0px 0px 10px ;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 1;
+  }
+  nav span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background: #cbf3f0;
+    border-radius: 8px;
+    transition: .5s;
+  }
+  nav a:nth-child(1):hover~span{
+    left: 0;
+  }
+  nav a:nth-child(2):hover~span{
+    left: 100px;
+  }
+  .water{
+    position: absolute;
+    left: -8px;
+  }
+  .pet{
+    position: absolute;
+    right: 8px;
+  }
+  @keyframes transIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  

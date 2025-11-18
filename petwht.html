@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Parkinsans:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Parkinsans:wght@300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+        </style>
+    <link rel="stylesheet" href="stylepetwht.css">
+</head>
+<body>
+    <h1 id="myH1"></h1>
+    <nav>
+      <a href="water.html" class="water">Water</a>
+      <a href="petbrw.html" class="pet">Pet</a>
+      <span></span>
+    </nav>
+    <div class="txt">
+      <p>Jayden and Hillary's pets</p>  
+    </div>
+    <div class="dog" id="petPage">
+
+        <div class="y-1"></div>
+        <div class="y-2"></div>
+    
+        <div class="eye-1">
+          <div class="m"></div>
+        </div>
+    
+        <div class="eye-2">
+          <div class="m"></div>
+        </div>
+    
+        <div class="nose"></div>
+    
+        <div class="m-1X"> </div>
+        <div class="m-2X"></div>
+        <div class="toothX">
+          <span></span>
+        </div>
+        <div class="garis1"></div>
+        <div class="garis2"></div>
+    
+        <div class="face"></div>
+    
+        <div class="body"></div>
+    
+        <div class="leg-1">
+          <span>I I I</span>
+        </div>
+        <div class="leg-2">
+          <span>I I I</span>
+        </div>
+    
+        <div class="tail"></div>
+      </div>
+      <div class="boxcolor">
+        <h1>Dogs</h1>
+        <a href="petwht.html" class="BTNwhite">Kuro</a>
+        <a href="petbrw.html" class="BTNbrown">Rambo</a>
+      </div>
+</body>
+    <script>
+        var getHeight = dd+"px"; //untuk dimasukan ke root
+        var root = document.querySelector(':root');
+        var rootStyles = getComputedStyle(root); 
+        root.style.setProperty('--height', getHeight ) //insiasi ke root css
+        var color = rootStyles.getPropertyValue('--color');
+        console.log('color: ', 'green');
+    </script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Parkinsans:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Parkinsans:wght@300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+        </style>
+    <link rel="stylesheet" href="stylewater.css">
+</head>
+<body class="container">
+    <h1 id="myH1"></h1>
+    <nav>
+      <a href="water.html" class="water">Water</a>
+      <a href="petbrw.html" class="pet">Pet</a>
+      <span></span>
+    </nav>
+        <div class="case">
+        <p>
+            <span id="percentHeight"></span>
+        </p>
+    </div>
+        <div class="text">
+        <p>
+            <span class="days" id="outputdays"></span>
+            <span>days &</span>
+            <span class="hours" id="outputhour"></span>
+            <span>hours</span>
+            <span>from 19-11-2024 </span>
+        </p>
+    </div>
+    <div  id="counting">
+        <p id="date">
+        <span id="day"></span>
+        <span id="month"></span>
+        <span id="year"></span>      
+        </p>
+        </div>
+</body>
+    <script>
+
+        var today = new Date(); //new date()=tanggal hari ini
+        var d = today.getDate();
+        var m = today.getMonth();
+        var y = today.getFullYear();
+        var h = today.getHours();
+        document.getElementById('day').innerHTML = d ;
+        document.getElementById('month').innerHTML = m ;
+        document.getElementById('year').innerHTML = y ;
+        date.innerHTML = "";
+        var date1 = new Date('2024-11-19'); //tanggal awal, format: YYYY-MM-DD
+        var date2 = new Date(); //var
+
+        date1.setHours(0, 0, 0, 0); //set to 0, avoid decimals
+        date2.setHours(0, 0, 0, 0);
+        
+        var distance = Math.abs(date1 - date2);
+        var convertMS = 1000 * 60 * 60 * 24; 
+        var finaldistance = Math.round(distance / convertMS);
+        document.getElementById("outputdays").innerHTML=finaldistance; //to p id
+        document.getElementById("outputhour").innerHTML=h; //to p id
+
+        //menghitung tinggi air
+        var aa = finaldistance/365; //dibagi 1 tahun (365 hari)
+        var bb = aa * 100; //ubah ke persen
+
+        var cc = bb * 5; //convert ke size bottle
+        var dd = 440-cc;
+        dd = dd.toFixed(0); //atur desimal
+        var bbcopy = bb.toFixed(2);
+        document.getElementById("percentHeight").innerHTML=bbcopy+"%";
+
+        var getHeight = dd+"px"; //untuk dimasukan ke root
+        var root = document.querySelector(':root');
+        var rootStyles = getComputedStyle(root);
+        var height = rootStyles.getPropertyValue('--height');
+        console.log('height: ', height);
+        root.style.setProperty('--height', getHeight ) //insiasi ke root css
+    </script>
+</html>
